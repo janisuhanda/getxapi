@@ -14,7 +14,13 @@ class GetListUsers extends StatelessWidget {
           title: Text('Get List Users'),
         ),
         body: Container(
-          child: Text(getUsrLstC.getuserlisting[0].firstName!),
+          child: Center(
+            child: Obx(
+              () => Text(getUsrLstC.getuserlisting.length > 0
+                  ? getUsrLstC.getuserlisting[0].firstName!
+                  : 'no data'),
+            ),
+          ),
         ),
       ),
     );
